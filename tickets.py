@@ -5,7 +5,7 @@ from time import sleep
 # user agent
 user_agent = "PAX Ticket Buyer v1.0 by /u/80blite"
 r = praw.Reddit(user_agent=user_agent)
-r.login('80blite', 'ihatesh33p')
+r.login()
 
 timer = 0
 while True:
