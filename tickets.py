@@ -9,28 +9,24 @@ r.login()
 
 timer = 0
 messages = 0
-new_message = False
 
 while True:
 
     submissions = []
+    new_message = False
 
     # load history
     with open("history.txt", 'r') as f:
         history = f.read()
-                #if history:
-                #    print('history: \n' + history)
-                #else:
-                #    print('No history')
 
-        # assign subreddit
+        # get 50 submissions
         top_50 = r.get_subreddit('paxpassexchange').get_new(limit=50)
 
-        # list of submissions not already in history
+        # create list of submissions not already in history
         submissions = [submission for submission in top_50\
         if "wts" in submission.title.lower() and submission.id not in history]
 
-    # send link to user and add submission.id to history
+    # send message to seller and add submission title and id to history
     with open("history.txt", 'a') as f:
         for submission in submissions:
             msg = "Hi there,\n\nI'm trying to take my wife to PAX as a Valentine's day gift. She thinks she didn't get anything and she's been wanting to go to PAX for a few years now.\n\nAnway, I'm really interested in your tickets and they would mean a lot to my wife and I. Message me back if you'd like to do business =)\n\nThanks so much,\n\n-Mike"
