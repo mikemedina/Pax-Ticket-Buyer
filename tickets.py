@@ -8,11 +8,12 @@ r = praw.Reddit(user_agent=user_agent)
 r.login()
 
 timer = 0
+messages = 0
+new_message = False
+
 while True:
 
     submissions = []
-    messages = 0
-    new_message = False
 
     # load history
     with open("history.txt", 'r') as f:
