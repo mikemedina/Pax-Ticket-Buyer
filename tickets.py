@@ -29,7 +29,7 @@ while True:
     # send message to seller and add submission title and id to history
     with open("history.txt", 'a') as f:
         for submission in submissions:
-            msg = "Hi there,\n\nI'm trying to take my wife to PAX as a Valentine's day gift. She thinks she didn't get anything and she's been wanting to go to PAX for a few years now.\n\nAnway, I'm really interested in your tickets and they would mean a lot to my wife and I. Message me back if you'd like to do business =)\n\nThanks so much,\n\n-Mike"
+            msg = "Example message here"
             r.send_message(submission.author, 'Interested in your tickets!', msg)
             messages += 1
             new_message = True
