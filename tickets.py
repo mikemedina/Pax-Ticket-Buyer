@@ -42,4 +42,5 @@ while True:
         print("Submissions: " + str(len(submissions)))
         print('Messages sent: ' + str(messages))
         new_message = False
-
+    if timer % 900 == 0:
+        print('Running for {} minutes'.format(timer // 60))
